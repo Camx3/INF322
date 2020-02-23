@@ -14,8 +14,8 @@ import { PageViewElement } from './page-view-element.js';
 // This element is connected to the Redux store.
 import { store } from '../store.js';
 import { customCss } from './style';
-import "weightless/textfield";
-import "weightless/button";
+import '@polymer/paper-input/paper-input.js';
+
 
 // These are the actions needed by this element.
 import {
@@ -37,7 +37,7 @@ export class LoginComponent extends PageViewElement {
     if (!this._loggedIn) {
         console.log('try again!');
     } else {
-        store.dispatch(login({user:'Some name'}))   // El login
+        store.dispatch(login({user:'F'}))   // El login
         store.dispatch(navigate('/home'))           // Navegacion a pagina inicial
     }
   }
@@ -46,11 +46,16 @@ export class LoginComponent extends PageViewElement {
     /* (3) Implementar aca su componente con sus inputs, la logica de usuario debe pasar por redux para que se pueda
      * hacer la actualizacion en la pagina inicial. En este caso usamod 'login' definido en actions/app */
     return html`
-    <div class="centered">
-        <wl-textfield label="Usuario"></wl-textfield>
-        <wl-textfield label="Contraseña" type="password"></wl-textfield>
-        <wl-button @click="${this._logIn}">Entrar</wl-button>
-    </div>
+<style>
+
+</style>
+<div class="custom-parent">
+  <paper-input class="custom" label="Usuario" no-label-float>
+  </paper-input>
+  <paper-input class="custom" label="Contraseña" no-label-float type="password">
+  </paper-input>
+  <div class="logInButton2" @click="${this._logIn}">Enviar</div>
+</div>
     `;
   }
 }

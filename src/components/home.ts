@@ -14,6 +14,14 @@ import { PageViewElement } from './page-view-element.js';
 // This element is connected to the Redux store.
 import { customCss } from './style';
 
+import '@polymer/paper-item/paper-item.js';
+import '@polymer/paper-listbox/paper-listbox.js';
+import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
+import '@polymer/app-layout/app-drawer/app-drawer.js';
+import '@polymer/app-layout/app-header-layout/app-header-layout.js';
+import '@polymer/app-layout/app-header/app-header.js';
+import '@polymer/app-layout/app-toolbar/app-toolbar.js';
+
 @customElement('home-page')
 export class HomePage extends PageViewElement {
   static get styles() {
@@ -23,12 +31,44 @@ export class HomePage extends PageViewElement {
   protected render() {
     /* Aca va el contenido, pueden poner contenido dummy */
     return html`
-    <div id="main">
-        <div id="header"></div>
-        <div id="nav-bar"></div>
-        <div id="content" class="centered">
-            <h2>Hola mundo!</h2>
-        </div>
-    </div>`;
+    <app-drawer-layout responsive-width="1280px" style="background: blue">
+    <app-drawer id="drawer" opened persistent slot="drawer" style="">
+        <app-header-layout has-scrolling-region style="background: orangered">
+          <app-header fixed slot="header">
+           
+          </app-header>
+          <!-- nav menu -->
+          <!-- Two way binding to the selected property has been removed due to polymer/issues/4405 -->
+          <paper-listbox attr-for-selected="name" style="background: orangered">
+          <paper-item name="space">
+             <a name="name">Usuario</a>    
+             </paper-item><br>
+             <paper-item name="foto">
+                <a name="foto">Foto</a>
+                </paper-item>
+                 <br><br>
+            <paper-item name="noticias" >
+              <a name="name">Noticias</a>
+            </paper-item>
+            <paper-item name="ramos" >
+              <a name="name">Ramos</a>
+            </paper-item>
+           
+            <paper-item name="solicitudes" >
+              <a name="name">Solicitudes Externas</a>
+            </paper-item>
+            <paper-item name="enlaces" >
+              <a name="name">Enlaces Externos</a>
+            </paper-item>
+          </paper-listbox>
+        </app-header-layout>
+      </app-drawer>
+      <div id="header"> 
+      
+      <div class="centered"> <h1 style="color: white" align="center">SIGA</h1></div>
+      </div>
+  <!-- list/detail pages -->
+    </app-drawer-layout>
+`;
   }
 }

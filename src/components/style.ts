@@ -57,4 +57,164 @@ export const customCss = css`
   justify-content: center;
   height: 100%;
 }
+
+.custom-parent {
+      font-size: 12px;
+      margin: auto;
+      width: 30%;
+      padding: 10px;
+    }
+    paper-input.custom:hover {
+      border: 1px solid #29B6F6;
+    }
+    paper-input.custom {
+      margin-bottom: 0px;
+      --primary-text-color: #01579B;
+      --paper-input-container-color: black;
+      --paper-input-container-focus-color: black;
+      --paper-input-container-invalid-color: black;
+      border: 1px solid #BDBDBD;
+      border-radius: 5px;
+
+      /* Reset some defaults */
+      --paper-input-container: { padding: 0;};
+      --paper-input-container-underline: { display: none; height: 0;};
+      --paper-input-container-underline-focus: { display: none; };
+
+      /* New custom styles */
+      --paper-input-container-input: {
+        box-sizing: border-box;
+        font-size: inherit;
+        padding: 4px;
+      };
+      --paper-input-container-input-focus: {
+        background: rgba(0, 0, 0, 0.1);
+      };
+      --paper-input-container-input-invalid: {
+        background: rgba(255, 0, 0, 0.3);
+      };
+      --paper-input-container-label: {
+        top: -8px;
+        left: 4px;
+        background: white;
+        padding: 2px;
+        font-weight: bold;
+      };
+      --paper-input-container-label-floating: {
+        width: auto;
+      };
+    }
+    
+  .logInButton2 {
+  width: 30%;
+  font-size: 16px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border: 2px solid #BDBDBD;
+  border-radius: 5px;
+  transition-duration: 0.4s; 
+}
+.logInButton2:hover {
+  background-color: #29B6F6; 
+  color: white;
+}
+
+img{
+  background-image: url('//http://www.exalumnos.usm.cl/wp-content/uploads/2015/06/MARCA-Color.jpg');
+  display: block;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: auto;
+  padding: 0px;
+  float: left;
+  height: 50%;
+  width: 17.2%;
+  
+}
+app-drawer-layout:not([narrow]) [drawer-toggle] {
+      display: none;
+    }
+    .avatar-container {
+      position: relative;
+      border: 2px solid #00AA8D;
+      border-radius: 50%;
+      height: 90px;
+      padding: 2px;
+      width: 90px;
+      margin: 20px auto;
+    }
+    
+    .
+    .avatar-container .image {
+      background-image: url('//app-layout-assets.appspot.com/assets/pesto/avatar.jpg');
+      background-size: contain;
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+    }
+    .contact-info {
+      margin: 0 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #CCC;
+      text-align: center;
+    }
+    .contact-info .name {
+      font-weight: bold;
+    }
+    .contact-info .email {
+      color: #999;
+    }
+    paper-item {
+      height: 54px;
+    }
+    paper-item > a {
+      width: 100%;
+      height: 100%;
+      line-height: 54px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+    paper-icon-button {
+      --paper-icon-button-ink-color: white;
+    }
+    .dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
 `;
