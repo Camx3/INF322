@@ -21,11 +21,11 @@ Los objetivos de este escrito son los siguientes:
 ## Concepto del producto
 SIGA es un sistema de información creado por la Universidad Técnica Federico Santa María (UTFSM) para gestionar notas, asignaturas, deudas, certificados, entre otros.
 
-SIGA define su mision como:
+SIGA define su misión como:
 
 > Contribuir al desarrollo de las Tecnologías de Información con el fin de responder a las necesidades de la comunidad universitaria, a través del desarrollo de sistemas, que permitan mejorar la calidad de los servicios que brinda nuestra institución.
 
-Y su mision como:
+Y su misión como:
 > La comunidad universitaria tendrá acceso a servicios de Tecnologías de Información con calidad, rapidez, seguridad y sostenibilidad en el tiempo lo que contribuye al cumplimiento de la misión de la universidad.
 
 Más información puede ser encontrada en la sección *¿Qué es SIGA?* de [siga.usm.cl](https://siga.usm.cl//pag/)
@@ -48,21 +48,21 @@ En esta evaluación nos centraremos en los usuarios Alumnos y como mejorar las i
 El uso de el sistema es obligatorio para los estudiantes en UTFSM. 
 
 **uso al principio del semestre**
-Administrar sus ramos, ver su horario personal y ver el horario de asignaturas cuando elijan ramos. Inscribir asignaturas es fácil pero adaptar su horario, descubrir las asignaturas en SIGA y descubrir los planes de carrera es dificil.
+Administrar sus ramos, ver su horario personal y ver el horario de asignaturas cuando elijan ramos. Inscribir asignaturas es fácil, pero adaptar su horario, visualizar las asignaturas en SIGA y visualizar los planes de carrera es dificil.
 
 **uso durante el semestre**
-Ver su resultado por los asignaturas y ver los horarios de asignaturas para comunicar con los profesores que dictan éstos.
+Ver su horario personal y revisar los horarios por asignatura/departamento/profesor, para asistir a las clases y conocer la disponibilidad de un profesor, respectivamente. 
 
-Hay una página sobre ficha personal, donde se pueden actualizar su información personal a la escuela. Es facil descubir la pagina, pero cambiar algúna información es difícil porque los usuarios, sea los alumnos, no tienen autoridad para hacer cambios. Los alumnos extranjeros tienen menos autoridades que los alumnos **local**, entonces usar el sistema es mas dificil.
+Actualizar su información personal en la Ficha personal es fácil para datos como la _dirección acádemica_ o _numéro de telefono_, pero si se quiere modificar los _datos del apoderado_ o _dirección del grupo familiar_ es díficil, dado que los usuarios alumnos no tienen la autoridad para realizar estos cambios. Y si se trata de un **alumno de intercambio** (extranjero), la situación es aún más díficil, ya que tiene menos permisos de edición que un **alumno local**.
 
 **uso al fin semestre**
-Evaluar los asignaturas y profesores en la final de cada semestre.
+Revisar el avance curricular para ver las notas obtenidas en cada asignatura y realizar la encuesta docente para evaluar la asignatura y profesor.
 
 ### Para Administración
-La administración de UTFSM usa SIGA para informar a los alumnos, en genera por la página para noticias cual que el usuaria va antes de iniciar su sesíon. Sin embargo, muchos de los usuarios no leen la información y por eso, es dificil obtener la información.  
+La administración de la UTFSM usa SIGA para informar a los alumnos, a través de la página principal (que no requiere inicio de sesión), dónde se pueden encontrar noticias tanto de actualización de los reglamentos, como de plazos importantes. Pero depende de la pantalla del usuario si alcanza o no a visualizar esta información (en algunos casos sólo se ve el título o una parte de la primera sección), es por ello que se dificulta la lectura y obtención de la información por parte de los **alumnos**, puesto que no suelen percatarse de que hay y/o nuevos cambios.  
 
 ### Conclusión de Usabilidad
-En general la sistema es dificil entender, por que no ofrece mucho apoyo al usuario. Este apoyo podría ser información que indica las funciónes con un breve explicación y mejor organización para facilitar navegar el sistema y sus servicios.
+En general la sistema es díficil entender, porque no ofrece mucho apoyo al usuario. Por lo que para mejorar este aspecto, se podría agregar **información** que indique las funciónes de cada sección a través de una breve explicación y una **mejor organización** del contenido para facilitar la navegación por el sistema y sus servicios.
 
 ## Análisis de datos
 **¿Qué información muestra el sistema?
@@ -81,7 +81,7 @@ Planes de carrera: Ver el plan (cursos) de los semestres para cada carrera.
 Avance curricular: Ver los asignaturas inscritas del semestre y las notas de las evaluaciónes.   
 Inscripción: Inscibirse en ramos (ojo: solo es posible durante el tiempo de inscripción).  
 Cambio de mención: Cambio de Mención/Especialización, dónde el alumno puede cambiar especialización.  
-Postulación Intercambio: Enviar su solicitud para ir al intercambio.  
+Postulación Intercambio: Enviar su solicitud para irse de intercambio.  
 Horario asignaturas: Ver el horario de cada asignatura dictada el semestre actual.   
 Asignaturas inscritas - Ver información sobre las asignaturas inscritas, comó las siglas, nombre del curso, número de créditos, nota final, evaluaciónes y el horario de los asignaturas.  
 Correo y Credencial USM - ver su RUT, nombre, correo USM y código QR Credencial.  
@@ -95,7 +95,10 @@ Consulta de Pagarés - Compromisos del usuario para pagar en una fecha más tard
 ¿Por qué?**
 
 ### Noticias
-Cuando el usuario entra https://siga.usm.cl/pag/, el sistema muestra la pagina inicial, como se muestra en Figura 2. En este página hay informacion sobre el sistema, información de los que se puedan contactar sobre el sistema y información sobre la universidad. Cuando se inicie la sesión en SIGA, no es posible buscar esta información de nuevo.  Entonces información clave al usuario no es muy acesible durante su uso entero del SIGA.
+Cuando el usuario entra https://siga.usm.cl/pag/, el sistema muestra la pagina inicial, como se muestra en Figura 2. En esta página hay información sobre el sistema, medios de contacto y sobre la universidad.
+Cuando se inicie la sesión en SIGA, no es posible buscar esta información de nuevo.  Entonces información clave al usuario no es muy acesible durante su uso entero del SIGA.
+
+P: Las noticias y información debe venir despues de inciar una sesión. Esto hace que el usuario puede acceder a la información cuando ya está dentro del sistema. Esto evite que el usuario tiene que salir del sistema para buscar la información en la pagina mostrada en Figura 2. Las noticias debe estar en una cuadra en el nueva menu a la izquierda, donde el menu contiene las alternativas de navegación cuando se haya iniciado una sesión. Esto facilitará que el alumno lea la información.
 
 ### Ingreso
 El usario tiene dos ventanas para iniciar la sesión en SIGA, como se muestra en  Figura 2. El sistema no explica la diferencia entre las dos maneras de iniciar la sesión (esto es las maneras de ingresar a la cuenta viene de que antiguos y nuevos usarios no están en la misma servidor), y el usario necesitaría más suporte para entender cual información es necesario para iniciar la sesión usando la manera a la izquierda.
@@ -104,7 +107,7 @@ El usario tiene dos ventanas para iniciar la sesión en SIGA, como se muestra en
 ***Figura 2***
 
 ### Navigación desorganizada - Maybe change the photo to show the volver
-Cuando el usuario inicia la sesión, el sistema muestra la página principal, como se muestra en  Figura 1. El sistema muestra el nombre del usario arriba por la izquierda. La página principal, el inicio, no tiene ningún nombre. Cada vez que el usario sigue con alguna tarea, para volver a la pagina principal, hay que presionar el botón "volver" abajo a la derecha.
+Cuando el usuario inicia la sesión, el sistema muestra la página principal, como se muestra en  Figura 1. El sistema muestra el nombre del usario en la esquina superior izquierda. La página principal, el inicio, no tiene ningún nombre. Cada vez que el usario sigue con alguna tarea, para volver a la pagina principal, hay que presionar el botón "volver" abajo a la derecha.
 
 Si no se usa el botón *volver*, se le desconecta de la página y hay que inicializar una nueva sesión. Se espera que pueda ir y venir en una página, por eso puede ser una experiencia irritante al usar el sistema. 
 
@@ -120,7 +123,7 @@ En el sistema, también hay descripciones de cada opción que se muestra cuando 
 ![Imagen_de_Descripción_Informativa](https://github.com/hvarg/INF322/blob/master/assets/SIGA_descriOpcionmasUtil.png)
 
 ### Inscripción
-Cuando el usario quiere inscribirse a ramos fuera del tiempo para inscripción, el sistema no indica al usario que no es posible. Se necesita cambiar este aspecto del sistema porque sin esta información puede confudir y molestar al usuario.
+Cuando el usario quiere inscribirse a ramos fuera del período de inscripción, el sistema no indica al usario que no es posible. Se necesita cambiar este aspecto del sistema porque sin esta información puede confudir y molestar al usuario.
 
 P: Mejor sería si la sistema tuviera algún tipo de indicación si esta fuera del tiempo para hacer incribciónes para mejorar la visibilidad del estado del sistema. Una opción sería usar un reloj con un texto diciendo "XX dias hasta que es posible hacer inscripciónes".
 
@@ -142,18 +145,17 @@ No es posible cambiar contraseña cuando has iniciado la sesión. Para cambiar c
 ![Image of_contrasena_4](https://github.com/hvarg/INF322/blob/master/assets/contrasena_4.png)
 
 
-### Noticias
-P: Las noticias y información debe venir despues de inciar una sesción. Las noticias debe estar en una cuadra en el nueva menu a la izuierda, donde el menu contiene las alternativas de navegación cuando se haya iniciado una sesión. Esto facilitará que el alumno lea la información.
+
 
 ### Horario Asignaturas
 En esta parte del SIGA, nos falta búsquedor de asignaturas. Además, cuando se busque asignaturas, se obtenga demasiado información (esto es el profesor o cupos para cada curso).  Esta cantidad de información además puede confudir al usuario o causar demoras inecesarias en el proceso de buscar
 
 P: Cuando se encuentra el curso que nos gusta, se debería hacer clic en la resuelto para obtener más información (como la información dicha) en un cuadro a la izquierda en la misma pagina. Aquí está la información sobre el profesor y el horario puede estar. También debe haber un *link* con la dirección de correo electrónico al profesor.
 
-### Demasiado visibilidad de ficha personal
-Es demasiado fácil a cambiar fichas personales y verlos cuando se tenga aceso a una cuenta.
+### Visibilidad innecesaria de la ficha personal
+Cuando se acede las fichas personales, datos que puede ser muy sensible, como grupo sanguíneo, dirección del período académico, teléfono, se pueden ver muy fácilmente y modificar sin verificar la identidad del usuario.
 
-P: El SIGA debe notificar al usuario que su sesión estaría perdida por una falta de actividad para que el usuario pueda confirmar su presencia y continua la sesión y no pedir la sesión y entrar su información de nuevo.
+P: Por defecto, esa información se debe ser ocultado. Además, si el usuario quiere ver y modificar los datos, SIGA debe pedir al usuario entrar su contraseño de nuevo para que verifique que el dueño de la cuenta esta haciendo interactuando con esos datos. Esta modificación añade un otro nivel de seguridad para proteger datos personales del usuario.
 
 ### Falta de entender límites temporales de sistem
 El usuario puede pedir su sesión, pero no hay información del límite del tiempo que queda al usuario hasta se le pierde su sesión por una falta de actividad.  Entonces, puede irritar al usuario cuando tiene que entrar su información de nuevo.
