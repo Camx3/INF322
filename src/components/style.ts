@@ -15,7 +15,7 @@ export const customCss = css`
 }
 
 #main {
-    display: grid;
+  display: grid;
   height: 100%;
   grid-template-columns: 300px calc(100% - 300px);
   grid-template-rows: 100px calc(100% - 100px);
@@ -53,8 +53,6 @@ export const customCss = css`
 
 .centered {
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }
 
@@ -62,18 +60,21 @@ export const customCss = css`
       font-size: 12px;
       margin: auto;
       width: 30%;
-      padding: 10px;
+      padding: 100px;
     }
     paper-input.custom:hover {
       border: 1px solid #29B6F6;
     }
     paper-input.custom {
-      margin-bottom: 0px;
+      margin-bottom: 14px;
+      --paper-input-error:{
+      
+      }
       --primary-text-color: #01579B;
       --paper-input-container-color: black;
       --paper-input-container-focus-color: black;
       --paper-input-container-invalid-color: black;
-      border: 1px solid #BDBDBD;
+      border: 0.5px solid #BDBDBD;
       border-radius: 5px;
 
       /* Reset some defaults */
@@ -105,20 +106,6 @@ export const customCss = css`
       };
     }
     
-  .logInButton2 {
-  width: 30%;
-  font-size: 16px;
-  text-align: center;
-  background-color: white;
-  color: black;
-  border: 2px solid #BDBDBD;
-  border-radius: 5px;
-  transition-duration: 0.4s; 
-}
-.logInButton2:hover {
-  background-color: #29B6F6; 
-  color: white;
-}
 
 img{
   background-image: url('//http://www.exalumnos.usm.cl/wp-content/uploads/2015/06/MARCA-Color.jpg');
@@ -217,4 +204,30 @@ app-drawer-layout:not([narrow]) [drawer-toggle] {
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+.wrapper-btns {
+    margin-top: 15px;
+}
+paper-button.link {
+    color: #757575;
+}
+
+
+
+.logoutButt {
+  transition-duration: 0.4s;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-right: 0px;
+  padding: 0px;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  background: red;
+  height: 25%;
+}
+
+
+
+
 `;

@@ -8,6 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+
 declare global {
   interface Window {
     process?: Object;
@@ -27,14 +28,17 @@ import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { lazyReducerEnhancer } from 'pwa-helpers/lazy-reducer-enhancer.js';
 
 import app, { AppState } from './reducers/app.js';
+import user, {UserState} from "./reducers/userlogin.js";
+import {UserAction} from "./actions/userlogin.js";
 import { AppAction } from './actions/app.js';
 
 // Overall state extends static states and partials lazy states.
 export interface RootState {
   app?: AppState;
+  user: UserState;
 }
 
-export type RootAction = AppAction;
+export type RootAction = AppAction | UserAction ;
 
 // Sets up a Chrome extension for time travel debugging.
 // See https://github.com/zalmoxisus/redux-devtools-extension for more information.
@@ -57,5 +61,7 @@ export const store = createStore(
 
 // Initially loaded reducers.
 store.addReducers({
-  app
+  app,
+  user
 });
+

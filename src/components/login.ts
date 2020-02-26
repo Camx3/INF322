@@ -8,54 +8,104 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import { html, property, customElement } from 'lit-element';
-import { PageViewElement } from './page-view-element.js';
+import {html, property, customElement, LitElement} from 'lit-element';
+import {setPassiveTouchGestures} from "@polymer/polymer/lib/utils/settings";
 
 // This element is connected to the Redux store.
-import { store } from '../store.js';
+import {RootState, store} from '../store.js';
 import { customCss } from './style';
 import '@polymer/paper-input/paper-input.js';
+import '@polymer/polymer/polymer-element.js';
+import '@polymer/iron-ajax/iron-ajax.js';
+import '@polymer/iron-localstorage/iron-localstorage.js';
+import '@polymer/iron-input/iron-input.js';
+import '@polymer/paper-button/paper-button.js';
 
 
 // These are the actions needed by this element.
 import {
-  login,
   navigate
 } from '../actions/app.js';
 
+import{login} from "../actions/userlogin";
+import {connect} from "pwa-helpers/connect-mixin";
+
+
 @customElement('login-page')
-export class LoginComponent extends PageViewElement {
+export class LoginComponent extends connect(store)(LitElement) {
+
   @property({type: Boolean})
-  private _loggedIn: boolean = false;
-  
+  private _user: Boolean | undefined ;
+
+  @property({type: String})
+  public userName: string = "";
+
+  @property({type: String})
+  public password: string = "";
+
+  @property({type: String})
+  private _page: string = '';
+
+
+  constructor() {
+    super();
+    // To force all event listeners for gestures to be passive.
+    // See https://www.polymer-project.org/3.0/docs/devguide/settings#setting-passive-touch-gestures
+    setPassiveTouchGestures(true);
+  }
+
   static get styles() {
     return [customCss];
   }
 
+
+
   _logIn () {
-    this._loggedIn = (Math.random() > .25);
-    if (!this._loggedIn) {
-        console.log('try again!');
-    } else {
-        store.dispatch(login({user:'F'}))   // El login
-        store.dispatch(navigate('/home'))           // Navegacion a pagina inicial
+    if(this.userName!= "" ){
+      if(this.password!= ""){
+        store.dispatch(login(this.userName, this.password));
+        store.dispatch(navigate('/home'));
+      } else{
+      }
+    } else{
+
     }
+  }
+
+  setUsername(e:any) {
+    this.userName = e.target.value;
+  }
+
+  setPassword(e:any) {
+    this.password = e.target.value;
   }
 
   protected render() {
     /* (3) Implementar aca su componente con sus inputs, la logica de usuario debe pasar por redux para que se pueda
      * hacer la actualizacion en la pagina inicial. En este caso usamod 'login' definido en actions/app */
     return html`
-<style>
-
-</style>
+${this._user ? html`
+        <home-page class="page" ?active="${this._page === 'home'}"  username="${this.userName}"></home-page>
+        <view404-page class="page" ?active="${this._page === 'view404'}"></view404-page>
+`: html` 
 <div class="custom-parent">
-  <paper-input class="custom" label="Usuario" no-label-float>
+    <div id="unauthenticated">
+        <h1>Log In</h1>
+      <paper-input  @change=${(event:any) => this.setUsername(event)} id="username" type="text" value="${this.userName}" label="Usuario" auto-validate error-message="Necesita escribir el usuario" required>
+     </paper-input>
+        <paper-input @change=${(event:any) => this.setPassword(event)} label="Contraseña" type="password" value="${this.password}" id="password" auto-validate error-message="Necesita escribir una contraseña"required>
   </paper-input>
-  <paper-input class="custom" label="Contraseña" no-label-float type="password">
-  </paper-input>
-  <div class="logInButton2" @click="${this._logIn}">Enviar</div>
+    <div class="wrapper-btns">
+      <paper-button raised id="loginbutt" class="primary" on-tap="_login" @click="${this._logIn}">Log In</paper-button>
+    </div>
+    </div>
 </div>
-    `;
+    `}`;
   }
+
+  stateChanged(state: RootState) {
+    this._page = state.app!.page;
+    this._user = state.user.isLoggedIn;
+    }
 }
+
